@@ -1,28 +1,39 @@
-// // Main js file
-// import { Component } from "./classes/Component";
-//
-// const mainElement = document.getElementById('app');
-//
-// const component1 = new Component('component1');
-//
-// mainElement.append(component1.getElement());
-// component1.render();
-//
-// const print = () => {
-//   console.log('Click');
-// };
-//
-// component1.on('click', print);
-//
-// setTimeout(() => {
-//   component1.setData({color: 'green'});
-// }, 3000);
-//
-// setTimeout(() => {
-//   component1.off('click', print);
-// }, 2000);
-//
-//
+// Main js file
+import { Component } from "./classes/Component";
+
+const mainElement = document.getElementById('app');
+
+const component1 = new Component('component1');
+
+mainElement.append(component1.getElement());
+component1.render();
+
+const print = () => {
+  setInterval(() =>{
+    console.log('Click');
+  }, 1000);
+};
+
+component1.on('click', print);
+
+setTimeout(() => {
+  component1.setData({color: 'green'});
+}, 3000);
+
+setTimeout(() => {
+  component1.setData({color: 'blue'});
+}, 5000);
+
+setTimeout(() => {
+  component1.off('click', print);
+}, 5000);
+
+const comp2 = new Component('comp2');
+
+comp2.render();
+comp2.on('click', print);
+
+mainElement.append(comp2.getElement());
 
 
 // debounce js - посмотреть в гугуле
